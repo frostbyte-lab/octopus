@@ -29,23 +29,13 @@ type Screen = "home" | "menu";
 type Tab = "Web" | "Gambar" | "Video" | "Berita" | "Populer";
 
 const tabs: Tab[] = ["Web", "Gambar", "Video", "Berita", "Populer"];
+const LOGO_SRC = "/octopus-logo.png";
 
 function OctopusMark({ small = false }: { small?: boolean }) {
-  return (
-    <svg className={small ? "octopus-mark small" : "octopus-mark"} viewBox="0 0 220 150" aria-hidden="true">
-      <defs>
-        <linearGradient id="octoGradient" x1="20" x2="196" y1="10" y2="140" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#7650e8" />
-          <stop offset="1" stopColor="#43238e" />
-        </linearGradient>
-      </defs>
-      <path fill="url(#octoGradient)" d="M41 73c0-34 28-60 69-60s69 26 69 60v31c0 11-8 20-18 20-13 0-15-15-16-28-2 18-8 30-19 30-12 0-15-15-16-28-2 18-9 29-20 29-12 0-15-14-16-28-3 15-9 25-19 25-11 0-15-9-15-20V73Z" />
-      <path fill="#8c6af0" d="M46 68c0-30 26-50 64-50s64 20 64 50c0 16-7 28-17 36-1-22-9-34-18-34-10 0-15 13-17 33-2-20-8-33-18-33-11 0-16 13-18 33-2-19-8-31-18-31-9 0-16 11-18 30-5-9-4-21-4-34Z" opacity=".5" />
-      <circle cx="84" cy="66" r="7" fill="#fff" /><circle cx="136" cy="66" r="7" fill="#fff" />
-      <circle cx="85" cy="67" r="3" fill="#241947" /><circle cx="137" cy="67" r="3" fill="#241947" />
-      <path d="M100 85c7 5 13 5 20 0" fill="none" stroke="#fff" strokeLinecap="round" strokeWidth="4" />
-    </svg>
-  );
+  if (small) {
+    return <span className="mascot-logo"><img className="octopus-mark small" src={LOGO_SRC} alt="Octopus mascot" /></span>;
+  }
+  return <img className="octopus-mark" src={LOGO_SRC} alt="Octopus" />;
 }
 
 function BottomNav({ screen, onNavigate }: { screen: Screen; onNavigate: (screen: Screen) => void }) {
@@ -86,7 +76,6 @@ function HomeScreen({ onNavigate }: { onNavigate: (screen: Screen) => void }) {
       <main className="home-content">
         <header className="logo-wrap">
           <div className="logo-orbit"><OctopusMark /></div>
-          <div className="brand">Octopus</div>
           <div className="tagline">BROWSER CERDAS. HASIL CEPAT.</div>
         </header>
         <div className="search-bar">
