@@ -76,7 +76,6 @@ function HomeScreen({ onNavigate }: { onNavigate: (screen: Screen) => void }) {
       <main className="home-content">
         <header className="logo-wrap">
           <div className="logo-orbit"><OctopusMark /></div>
-          <div className="tagline">BROWSER CERDAS. HASIL CEPAT.</div>
         </header>
         <div className="search-bar">
           <Search size={20} className="search-icon" />

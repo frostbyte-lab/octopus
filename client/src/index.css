@@ -13,9 +13,9 @@ button:focus-visible, input:focus-visible { outline: 3px solid #a991ef; outline-
 .screen { min-height: 100vh; display: flex; flex-direction: column; animation: enter .32s cubic-bezier(.23,1,.32,1); }
 .home-content, .menu-content { flex: 1; padding: 43px 22px 24px; }
 .logo-wrap { display: flex; flex-direction: column; align-items: center; margin: 0 0 17px; }
-.logo-orbit { position: relative; display: grid; place-items: center; width: 300px; height: 194px; }
+.logo-orbit { position: relative; display: grid; place-items: center; width: min(300px, 82vw); height: auto; }
 .logo-orbit::before, .logo-orbit::after { display: none; }
-.octopus-mark { width: 300px; position: relative; z-index: 1; filter: drop-shadow(0 10px 10px rgba(73, 39, 153, .18)); }
+.octopus-mark { display: block; width: 100%; height: auto; position: relative; z-index: 1; filter: drop-shadow(0 10px 10px rgba(73, 39, 153, .18)); }
 .mascot-logo { display: block; width: 120px; height: 86px; overflow: hidden; }
 .octopus-mark.small { width: 148px; max-width: none; transform: translate(-14px, -3px); }
 .brand, .title { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; letter-spacing: -1.5px; }
